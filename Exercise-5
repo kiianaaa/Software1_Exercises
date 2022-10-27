@@ -1,0 +1,53 @@
+import random
+# 1 The sum of numbers rolled in a dice
+
+
+roll = int(input("How many times should I roll the dice? "))
+disum = 0
+for i in range(roll):
+    dice = random.randint(1, 6)
+    print(str(dice), end=" ")
+    disum = disum + dice
+print(f"\nThe sum after rolling {roll} dice is: {disum}")
+
+
+# 2 printing the 5 greatest numbers given
+
+n_list = []
+
+name = input("Enter any number you like then hit enter twice to see the result: ")
+while name != "":
+    n_list.append(name)
+    name = input("Enter any number you like: ")
+    if name == "":
+        n_list.sort(reverse=True)
+        print(n_list[0:5])
+print("Goodbye!")
+
+
+# 3 tels if the number is prime or not
+nim = int(input("The number you want to know is prime or not: "))
+for i in range(1, 3):
+    if nim == 1:
+        print("This number is neither prime nor composite.")
+        break
+    if nim == 2:
+        print("Yes it's prime!")
+        break
+for i in range(2, nim):
+    if nim % i == 0:
+        print("Not prime!")
+        break
+    else:
+        print("Yes it's prime!")
+        break
+
+
+# 4 name of cities in order
+city = []
+for i in range(5):
+    val = input("Enter the name of a city: ")
+    city.append(val)
+
+for n in city:
+    print(n)
