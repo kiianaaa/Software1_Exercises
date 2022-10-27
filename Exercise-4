@@ -1,0 +1,94 @@
+# 1 print all numbers divisible by 3 (1-1000)
+import random
+
+n = 1
+while n <= 1000:
+    if n%3 == 0:
+       print(str(n))
+    n = n + 1
+
+
+# 2 converting inches to centimeters
+
+inch = float(input("Enter your value in inch here: "))
+while inch >= 0:
+    cm = inch * 2.54
+    print(f"The value entered in centimeter is: {cm:.2f}  ")
+    inch = float(input("Enter your value in inch here: "))
+    if inch <= 0:
+        print("The program has ended.")
+        break
+
+
+
+# 3 gives the smallest and largest number you entered
+while True:
+    numb = int(input("Give any number you want: "))
+    largest_p = int(0)
+    largest = int(0)
+    while numb != "":
+        numb = int(input("Give any number you want: "))
+        if numb < largest:
+            largest_p = numb
+        if numb > largest:
+            largest = numb
+        if numb == "":
+            break
+    print(f"smallest is:{largest_p}")
+    print(f"largest is:{largest} ")
+
+
+
+# 4 guess the number
+
+rando = random.randint(1, 10)
+number = float(input("Guess the number: "))
+while  number != rando:
+    if number > rando:
+         print("You guessed to high")
+         number = float(input("Guess again: "))
+    if number < rando:
+        print("You guessed to low")
+        number = float(input("Guess again: "))
+    if number == rando:
+        print("Correct!")
+
+
+
+# 5 username and password
+
+finished_rounds = 3
+answer1 = input("Please type your username: ")
+answer2 = input("Please type your password: ")
+user = "Python"
+password = "Rules"
+while finished_rounds >= 0:
+    if answer1 == user and answer2 == password:
+        print("Welcome!")
+        break
+    if answer1 != user or answer2 != password:
+        print("Please type your username and password again.")
+        finished_rounds = finished_rounds - 1
+        answer1 = input("Username: ")
+        answer2 = input("Password: ")
+    if finished_rounds < 0:
+        print("Access denied.")
+        break
+
+
+
+# 6 approximation for value of pi
+
+value = int(input("Give me the value "))
+n = 0
+i = 0
+while True:
+    x = random.random()
+    y = random.random()
+    if x*x+y*y < 1:
+        n = n + 1
+    if i == value - 1:
+        break
+    i = i + 1
+pi = (4*n) / value
+print("The approximation for pi is:" + str(pi))
