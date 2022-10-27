@@ -1,0 +1,59 @@
+# 1 the four season
+
+season = ("winter", "Spring", "Summer", "Fall")
+month = int(input("Enter the number of your month: "))
+if month <= 3:
+    print(f"Your month is in {season[0]}")
+if month >= 4 and month <= 6:
+    print(f"Your month is in {season[1]}")
+if month >= 7 and month <= 9:
+    print(f"Your month is in {season[2]}")
+if month >= 10 and month <= 12:
+    print(f"Your month is in {season[3]}")
+
+
+# 2 different names inputted
+
+names = set()
+print("Enter stop to see the result")
+while True:
+    name = input("Give a name: ")
+    noname = name in names
+    if name == "stop":
+        print("The program has ended.")
+        print(names)
+        break
+    if noname == True:
+        print("You already have this name.")
+    else:
+        print("A new name!")
+        names.add(name)
+
+
+# 3 fetching and storing airport data
+
+dictionary = {}
+
+
+def data_append(ICAO, name):
+    dictionary[ICAO] = name
+
+
+def get_data(ICAO):
+    print(dictionary[ICAO])
+
+
+while True:
+    opt = input("You have tree options: \n a to store an airport \n b to fetch the airport name \n and c to quit: ")
+    if opt == "a":
+        code = input("Enter the ICAO code: ")
+        air = input("Now give the name of the airport: ")
+        data_append(code, air)
+    elif opt == "b":
+            codee = input("Please enter your ICAO code: ")
+            if codee in dictionary:
+                print("The airport name is:")
+                get_data(codee)
+    else:
+        print("Execution has ended")
+        break
