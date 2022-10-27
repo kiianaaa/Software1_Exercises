@@ -1,0 +1,49 @@
+# 1 Greets you with your name
+import math
+import random
+
+name = input("We would like to know your name: ")
+print("Hello, " + name + "!")
+
+# 2 Gives area of a circle
+radius = float(input("Give me the radius of your circle: "))
+area = math.pi * radius ** 2
+print(f"The circle's area is: {area:.1f}")
+
+# 3 Gives perimeter and area of a rectangle
+length = float(input("length of you rectangle: "))
+width = float(input("width of your rectangle: "))
+area = width * length
+perimeter = 2* (width + length)
+print(f"The area is: {area:.1f}")
+print(f"The perimeter is: {perimeter:.1f}")
+
+# 4 Sum, product, and average of three numbers
+number_one = int(input("I want a number: "))
+number_two = int(input("Another one please: "))
+number_three = int(input("And another: "))
+sum = number_one + number_two + number_three
+product = number_one * number_two * number_three
+average = number_one + number_two + number_three/3
+print("Here is the sum, product and average of your numbers")
+print(f"The sum: {sum:.1f}")
+print(f"The product: {product:.1f}")
+print(f"The average: {average:.1f}")
+
+# 5 mass in medieval units to kilograms and grams
+print("We can turn your medieval units into modern ones")
+talents = float(input("Amount 0f talents: "))
+pounds = float(input("Amount of pounds: "))
+lots = float(input("Amount of lots: "))
+talent_p = talents*20
+poundss = talent_p+pounds
+lotss = lots + poundss*32
+grams = lotss*13.3%1000
+kilo = lotss*13.3//1000
+print((f"value in modern units: {kilo:.1f} kilogram,and {grams:6.2f} grams"))
+
+
+# 6 Two combination for a lock
+print("I can generate locks for you! ")
+print(("your 3 digit lock is: ") + (f"{random.randint(0, 999):03d}"))
+print(("Your 4 digit lock is: ") + (f"{random.randint(1, 6):04d}"))
