@@ -1,0 +1,52 @@
+# 1 Should I release the fish?(length of a zander)
+
+size_limit = 42
+length = float(input("Type the length of yor zander here: "))
+if length >= 42:
+    print("your fish fulfills the size limit.")
+else:
+    below = 42-length
+    print("you have to release your fish as it doesn't meet the size limit.")
+    print(f"The fish is {below:.1f} cm below the size limit.")
+
+
+# 2 Cabin class description of a cruise ship
+
+cabin = input("Please state the class of the cabin. ")
+if cabin == "LUX":
+    print("It is an upper-deck cabin with a balcony. ")
+elif cabin == "A":
+    print("It is an above the car deck, equipped with a window. ")
+elif cabin == "B":
+     print("It is a windowless cabin above the car deck.")
+elif cabin == "C":
+    print("It is a windowless cabin below the car deck.")
+else:
+    print("Invalid cabin class.")
+
+# 3 Notifies about your hemoglobin
+
+gender1 = "Female"
+gender2 = "Male"
+answer = input("Please state your biological gender: ")
+hemo = float(input("Please state your hemoglobin value: "))
+if hemo >= 117 and hemo <= 155 and answer == gender1:
+    print("Your hemoglobin value is normal.")
+if hemo >= 156 and answer == gender1:
+    print("Your hemoglobin value is high.")
+if hemo <= 116 and answer == gender1:
+    print("Your hemoglobin value is low.")
+elif hemo >= 134 and hemo <=167 and answer == gender2:
+    print("Your hemoglobin value is normal.")
+elif hemo >= 168 and answer == gender2:
+    print("Your hemoglobin value is high.")
+elif hemo <= 133 and answer == gender2:
+    print("Your hemoglobin value is low.")
+
+# 4 If the year is leap or not
+
+year = int(input("Please enter the year you want to check. "))
+if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+    print("Yes a leap year!")
+else:
+    print("No not a leap year:( ")
