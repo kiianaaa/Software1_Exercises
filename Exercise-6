@@ -1,0 +1,96 @@
+import random
+
+# 1 rolling dice until it is 6
+def dice():
+    ran = random.randint(1, 6)
+    return ran
+
+
+print("lets test if you can roll 6.")
+while True:
+    roll = dice()
+    print(roll)
+    if roll == 6:
+        print("Yes! You rolled 6!")
+
+        break
+
+
+# 2 modified version of #1 (gives sides to the dice)
+def number(k):
+    dice = random.randint(1, k)
+    return dice
+
+
+sides = int(input("Put the number of sides you want your dice to have: "))
+while True:
+    roll_dice = number(sides)
+    print(roll_dice)
+    if roll_dice == sides:
+        break
+
+
+# 3 gallons converted into liters
+
+def liters(gas):
+    liter = gas * 3.7854
+    print(f"{liter:.2f}")
+    return
+
+
+gass = int(input("please enter your gasoline value: "))
+while True:
+    if gass >= 0:
+        liters(gass)
+        gass = int(input("please enter your gasoline value: "))
+    if gass <= 0:
+        print("The conversion is done.")
+    break
+
+
+# 4 sum of all numbers in a list
+
+def mine(integers):
+    accum = 0
+    for i in integers:
+        accum += int(i)
+
+    return accum
+
+
+val = input("give me a set of values: ").split()
+print(f"The sum is: {mine(val)}")
+
+
+# 5 gives a second list without the uneven numbers
+
+def copy_list(a):
+    for num in a:
+        if num % 2 != 0:
+            a.remove(num)
+
+    return a
+
+
+first_list = [1, 2, 3, 4, 5, 6, 7]
+print(first_list)
+print(copy_list(first_list))
+
+
+# 6 which pizza you should eat
+def func(dia, mon):
+    dia_m = dia / 100
+    per = dia_m / mon
+    return per
+
+
+first_piz = int(input("Diameter of the first pizza in cm: "))
+first_pri = int(input("Cost of the first pizza: "))
+sec_piz = int(input("Diameter of the second pizza in cm: "))
+sec_pri = int(input("Cost of the second pizza: "))
+first = func(first_piz, first_pri)
+second = func(sec_piz, sec_pri)
+if first > second:
+    print("You should definitely buy the first pizza!")
+else:
+    print("The second is better value for money!")
